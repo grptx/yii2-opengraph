@@ -45,7 +45,7 @@ class TwitterCard {
 		if($this->$property!==null){
 			$property = str_replace('_', ':', $property);
 			Yii::$app->controller->view->registerMetaTag([
-				'property' => 'twitter:'.$property,
+				'name' => 'twitter:'.$property,
 				'content' => $this->$property,
 			], 'twitter:'.$property);
 		}
