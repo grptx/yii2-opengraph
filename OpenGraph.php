@@ -1,5 +1,5 @@
 <?php
-namespace dragonjet\opengraph;
+namespace grptx\opengraph;
 use Yii;
 use yii\web\View;
 
