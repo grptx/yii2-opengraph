@@ -1,15 +1,15 @@
 {
-    "name": "dragonjet/yii2-opengraph",
+    "name": "grptx/yii2-opengraph",
     "description": "Open Graph implementation for Yii 2",
-	"keywords": ["yii2", "extension", "open-graph", "facebook"],
+	"keywords": ["yii2", "extension", "open-graph", "facebook","twitter"],
     "homepage": "https://github.com/dragonjet/yii2-opengraph",
     "type": "yii2-extension",
 	"license": "MIT",
 	"authors": [
         {
-            "name": "dragonjet",
-            "email": "jetriconew@gmail.com",
-			"homepage": "http://jetri.co"
+            "name": "gx",
+            "email": "gx@ensalvedcoder.org",
+			"homepage": "http://www.enslavedcoder.org"
         }
     ],
 	"minimum-stability": "stable",
@@ -18,7 +18,7 @@
     },
 	"autoload": {
         "psr-4": {
-            "dragonjet\\opengraph\\": ""
+            "grptx\\opengraph\\": ""
         }
     }
 }

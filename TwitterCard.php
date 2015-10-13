@@ -8,20 +8,10 @@ class TwitterCard {
 	public $site_id;
 	public $creator;
 	public $creator_id;
-	/*public $data1;
-	public $label1;
-	public $data2;
-	public $label2;
-	public $app_name_iphone;
-	public $app_id_iphone;
-	public $app_url_iphone;
-	public $app_name_ipad;
-	public $app_id_ipad;
-	public $app_url_ipad;
-	public $app_name_googleplay;
-	public $app_id_googleplay;
-	public $app_url_googleplay;*/
-	
+	public $title;
+	public $description;
+    public $image;
+
 	public function __construct(){
 		// Load default values
 		$this->card = null;
@@ -46,6 +36,9 @@ class TwitterCard {
 		$this->checkTag('site_id');
 		$this->checkTag('creator');
 		$this->checkTag('creator_id');
+        $this->checkTag('title');
+        $this->checkTag('description');
+        $this->checkTag('image');
 	}
 	
 	private function checkTag($property){
