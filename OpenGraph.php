@@ -11,6 +11,9 @@ class OpenGraph {
 	public $type;
 	public $locale;
 	public $image;
+	public $app_id;
+	public $published_time;
+	public $modified_time;
 	
 	public function __construct(){
 		// Load default values
@@ -32,6 +35,7 @@ class OpenGraph {
 			Yii::$app->controller->view->registerMetaTag(['property'=>'og:site_name', 'content'=>$this->site_name], 'og:site_name');
 			Yii::$app->controller->view->registerMetaTag(['property'=>'og:url', 'content'=>$this->url], 'og:url');
 			Yii::$app->controller->view->registerMetaTag(['property'=>'og:type', 'content'=>$this->type], 'og:type');
+			Yii::$app->controller->view->registerMetaTag(['property'=>'og:app_id', 'content'=>$this->app_id], 'og:app_id');
 			
 			// Locale issafe to be specifued since it has default value on Yii applications
 			Yii::$app->controller->view->registerMetaTag(['property'=>'og:locale', 'content'=>$this->locale], 'og:locale');
@@ -45,7 +49,14 @@ class OpenGraph {
 			if($this->image!==null){
 				Yii::$app->controller->view->registerMetaTag(['property'=>'og:image', 'content'=>$this->image], 'og:image');
 			}
-			
+
+            if($this->published_time!==null && $this->type=='article'){
+				Yii::$app->controller->view->registerMetaTag(['property'=>'og:article', 'content'=>$this->published_time], 'og:published_time');
+                if($this->modified_time!==null){
+                    Yii::$app->controller->view->registerMetaTag(['property'=>'og:article', 'content'=>$this->modified_time], 'og:modified_time');
+                }
+			}
+
 			$this->twitter->registerTags();
 		});
 	}
