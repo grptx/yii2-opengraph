@@ -14,6 +14,8 @@ class OpenGraph {
 	public $app_id;
 	public $published_time;
 	public $modified_time;
+    public $author;
+    public $publisher;
 	
 	public function __construct(){
 		// Load default values
@@ -24,7 +26,7 @@ class OpenGraph {
 		$this->type = 'article';
 		$this->locale = str_replace('-','_',Yii::$app->language);
 		$this->image = null;
-		
+
 		// Twitter Card
 		$this->twitter = new TwitterCard;
 		
@@ -56,6 +58,13 @@ class OpenGraph {
                     Yii::$app->controller->view->registerMetaTag(['property'=>'og:article', 'content'=>$this->modified_time], 'og:modified_time');
                 }
 			}
+            if($this->type=='article' && $this->author!=null) {
+                Yii::$app->controller->view->registerMetaTag(['property'=>'article:author', 'content'=>$this->modified_time], 'article:author');
+            }
+
+            if($this->type=='article' && $this->publisher!=null) {
+                Yii::$app->controller->view->registerMetaTag(['property'=>'article:publisher', 'content'=>$this->modified_time], 'article:publisher');
+            }
 
 			$this->twitter->registerTags();
 		});
