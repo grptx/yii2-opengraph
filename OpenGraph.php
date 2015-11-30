@@ -35,7 +35,7 @@ class OpenGraph {
 			Yii::$app->controller->view->registerMetaTag(['property'=>'og:site_name', 'content'=>$this->site_name], 'og:site_name');
 			Yii::$app->controller->view->registerMetaTag(['property'=>'og:url', 'content'=>$this->url], 'og:url');
 			Yii::$app->controller->view->registerMetaTag(['property'=>'og:type', 'content'=>$this->type], 'og:type');
-			Yii::$app->controller->view->registerMetaTag(['property'=>'og:app_id', 'content'=>$this->app_id], 'og:app_id');
+			Yii::$app->controller->view->registerMetaTag(['property'=>'fb:app_id', 'content'=>$this->app_id], 'fb:app_id');
 			
 			// Locale issafe to be specifued since it has default value on Yii applications
 			Yii::$app->controller->view->registerMetaTag(['property'=>'og:locale', 'content'=>$this->locale], 'og:locale');
